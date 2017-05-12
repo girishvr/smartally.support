@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-module.exports = mongoose.model('Users', new Schema({
+module.exports = mongoose.model('users', new Schema({
   name: String,
 
   countryCode: {

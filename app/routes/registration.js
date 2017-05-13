@@ -1,24 +1,40 @@
 // import the Schema for validation and save.
-const Schema = require('../models/users');
+const User = require('../models/users');
 
-function handler(request, response) {
-  // Creates new user.
-  const user = new Schema({
-    name: request.body.name,
-    countryCode: request.body.countryCode,
-    phone: request.body.phone,
-    email: request.body.email
-  });
+module.exports = (request, response) => {
+  const user = new User(request.body);
+  console.log(user);
+  validate(response);
+}
 
-  user.save((error) => {
-    if (error) {
-      print(error);
-      throw error;
-    }
-
-    console.log('Saved user');
-    response.status(200).json({message: 'User registered'});
+function validate(response) {
+  user.validate()
+  .then(() => {
+    save(response);
+  })
+  .catch((error) => {
+    response.status(400)
+    .json({
+      status: 1,
+      message: 'Invalid request.'
+    })
   });
 }
 
-module.exports = handler;
+function save(response) {
+  user.save()
+  .then(() => {
+    response.status(200)
+    .json({
+      status: 0,
+      message: 'Registration complete'
+    })
+  })
+  .catch((error) => {
+    response.status(500)
+    .json({
+      status: 1,
+      message: 'Could\'nt register user, please try again in sometime.'
+    })
+  })
+}

@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 // DB connection.
+mongoose.Promise = global.Promise;
 mongoose.connect(config.database, (error) => {
   if (error) {
     console.log('Failed to connect to DB');

@@ -1,29 +1,43 @@
+// import Mongoose.js.
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+// imports and binds inbuilt Promise module with the Mongoose.js instance.
+mongoose.Promise = global.Promise;
 
-module.exports = mongoose.model('users', new Schema({
-  name: String,
-
-  countryCode: {
+// Schema model.
+const userSchema = new mongoose.Schema({
+  name: {
     type: String,
-    required: () => {
-      return (this.email === '');
-    }
-  },
-
-  phone: {
-    type: String,
-    min: [10, 'Phone number should be 10 digits only.'],
-    max: [10, 'Phone number should be 10 digits only.'],
-    required: () => {
-      return (this.email === '');
-    }
+    default: ''
   },
 
   email: {
     type: String,
-    required: () => {
-      return (this.phone === '');
-    }
+    default: '',
+    unique: true
+    // required: [
+    //   () => {
+    //     return (this.phone == undefined);
+    //   },
+    //   'Please enter email or phone number to register.'
+    // ]
+  },
+
+  phone: {
+    type: String,
+    default: '',
+    unique: true,
+    min: [11, 'Incorrect phone number.'],
+    max: [14, 'Incorrect phone number.']
+    // required: [
+    //   () => {
+    //     return (this.email == undefined);
+    //   },
+    //   'Please enter email or phone number to register.'
+    // ]
   }
-}));
+});
+
+// Model instance.
+const user = mongoose.model('users', userSchema);
+// Export the user model.
+module.exports = user;

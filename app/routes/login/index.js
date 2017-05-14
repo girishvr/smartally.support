@@ -1,5 +1,5 @@
 // Import the DB model (Schema).
-const users = require('../models/users');
+const users = require('../../models/users');
 
 module.exports = (request, response) => {
   // Get body parameters from request.

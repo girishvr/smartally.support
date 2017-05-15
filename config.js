@@ -1,4 +1,4 @@
-const port = process.env.PORT || 39761;
+const port = process.env.PORT || 8080;
 const dbusername = 'smartsupport';
 const dbpassword = 'passwordSupport'
 

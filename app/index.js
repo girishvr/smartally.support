@@ -20,11 +20,12 @@ app.use(morgan('dev'));
 app.set('secretKey', config.secret);
 // Add routes.
 app.use('/', routes);
+
 // DB connection.
 mongoose.Promise = global.Promise;
 mongoose.connect(config.database)
 .then(() => {
-  return console.log('DB Connected');
+  console.log('DB Connected.')
   // Initiate listening.
   app.listen(config.port, (error) => {
     if (error) {
@@ -35,5 +36,5 @@ mongoose.connect(config.database)
   });
 })
 .catch((error) => {
-  return console.log('Failed to connect to DB', error);
+  console.log('Failed to connect to DB.', error);
 });

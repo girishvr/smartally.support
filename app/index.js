@@ -19,23 +19,23 @@ app.use(morgan('dev'));
 
 // DB connection.
 mongoose.Promise = global.Promise;
-mongoose.connect(config.database, (error) => {
-  if (error) {
-    console.log('Failed to connect to DB');
-    return;
-  }
-  console.log('DB Connected');
+mongoose.connect(config.database)
+.then(() => {
+  return console.log('DB Connected');
+  // Initiate listening.
+  app.listen(config.port, (error) => {
+    if (error) {
+      console.log('Server became deaf!');
+      process.exit(1);
+    }
+    console.log(`listening to port: ${config.port}`);
+  });
+})
+.catch((error) => {
+  return console.log('Failed to connect to DB', error);
 });
+
 app.set('secretKey', config.secret);
 
 // Add routes.
-app.use('/', routes);
-
-// Initiate listening.
-app.listen(config.port, (error) => {
-  if (error) {
-    console.log('Server became deaf!');
-    process.exit(1);
-  }
-  console.log(`listening to port: ${config.port}`);
-});
+app.use('/api/', routes);

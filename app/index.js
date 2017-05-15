@@ -16,26 +16,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // morgan preferences.
 app.use(morgan('dev'));
-
-// DB connection.
-mongoose.Promise = global.Promise;
-mongoose.connect(config.database, (error) => {
-  if (error) {
-    console.log('Failed to connect to DB');
-    return;
-  }
-  console.log('DB Connected');
-});
+// Set the app secret key.
 app.set('secretKey', config.secret);
-
 // Add routes.
 app.use('/', routes);
 
-// Initiate listening.
-app.listen(config.port, (error) => {
-  if (error) {
-    console.log('Server became deaf!');
-    process.exit(1);
-  }
-  console.log(`listening to port: ${config.port}`);
+// DB connection.
+mongoose.Promise = global.Promise;
+mongoose.connect(config.database)
+.then(() => {
+  console.log('DB Connected.')
+  // Initiate listening.
+  app.listen(config.port, (error) => {
+    if (error) {
+      console.log('Server became deaf!');
+      process.exit(1);
+    }
+    console.log(`listening to port: ${config.port}`);
+  });
+})
+.catch((error) => {
+  console.log('Failed to connect to DB.', error);
 });

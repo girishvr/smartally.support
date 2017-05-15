@@ -1,7 +1,9 @@
-const port = process.env.PORT || 12701;
+const port = process.env.PORT || 39761;
+const dbusername = 'smartsupport';
+const dbpassword = 'passwordSupport'
 
 module.exports = {
   'port': port,
   'secret': '$upp0rt$m@rt@11y',
-  'database': `mongodb://localhost/smartsupport`
+  'database': `mongodb://${dbusername}:${dbpassword}@ds139761.mlab.com:39761/smartsupport`
 }

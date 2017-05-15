@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 // Set the app secret key.
 app.set('secretKey', config.secret);
 // Add routes.
-app.use('/', routes);
+app.use('/api/', routes);
 
 // DB connection.
 mongoose.Promise = global.Promise;

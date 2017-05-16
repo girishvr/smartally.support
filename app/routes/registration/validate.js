@@ -6,10 +6,9 @@ module.exports = (user, response) => {
   })
   .catch((error) => {
     const errorMessage = error.errors.username ? error.errors.username.message : error.errors.password.message;
-    response.status(400)
-    .json({
+    response.json({
       status: 1,
       message: errorMessage
-    })
+    });
   });
 }

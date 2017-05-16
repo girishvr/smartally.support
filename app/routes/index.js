@@ -6,7 +6,8 @@ const login = require('./login');
 const registration = require('./registration');
 
 // Add routes.
-router.post('/register', registration)
+router
+.post('/register', registration)
 .post('/login', login);
 
 // Export routes.

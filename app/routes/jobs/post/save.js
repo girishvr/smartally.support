@@ -2,7 +2,11 @@
 module.exports = (job, response) => {
   job.save()
   .then(() => {
-    return response.json(job);
+    return response.json({
+      status: 0,
+      message: 'Job saved.',
+      job: job
+    });
   })
   .catch((error) => {
     console.log(error);

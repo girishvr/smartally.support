@@ -26,6 +26,11 @@ const jobSchema = new mongoose.Schema({
   status: {
     type: Boolean,
     default: false
+  },
+
+  completedBy: {
+    type: String,
+    default: ''
   }
 });
 

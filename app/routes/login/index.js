@@ -17,6 +17,10 @@ module.exports = (request, response) => {
   })
   .catch((error) => {
     console.log(error);
-    return response.json({catch: error});
+    return response.json({
+      status: 1,
+      message: 'Some internal error occured.',
+      error: error
+    });
   });
 }

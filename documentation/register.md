@@ -5,11 +5,11 @@ REGISTER
 POST request
 https://smartallysupport.herokuapp.com/api/register/```
 
+
 DESCRIPTION
 --
->Registers the support member.
 
-___
+>Registers the support member.
 
 REQUEST
 --

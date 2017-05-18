@@ -3,7 +3,7 @@ JOB
 
 ```
 GET request
-https://smartallysupport.herokuapp.com/api/job/
+https://smartallysupport.herokuapp.com/api/job?id=<job_identifier>
 ```
 
 DESCRIPTION

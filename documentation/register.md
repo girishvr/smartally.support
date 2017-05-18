@@ -46,7 +46,8 @@ RESPONSE
 {
   "status" : 1,
   "message" : "Username is required."
-}```
+}
+```
 
 ```
 {

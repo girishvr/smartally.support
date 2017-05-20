@@ -27,6 +27,7 @@ RESPONSE
   "status" : 0,
   "message" : "Job found.",
   "job" : {
+    "_id" : String,
     "imageEp" : String,
     "name" : String,
     "amount" : String,

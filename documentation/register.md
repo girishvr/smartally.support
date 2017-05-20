@@ -29,7 +29,11 @@ RESPONSE
 ```
 {
   "status" : 0,
-  "message" : "Registration complete."
+  "message" : "Registration complete.",
+  "user" : {
+    "id" : String,
+    "username" : String
+  }
 }
 ```
 

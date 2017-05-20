@@ -35,6 +35,7 @@ RESPONSE
   "status" : 0,
   "message" : "Job saved.",
   "job" : {
+    "_id" : String,
     "imageEp" : String,
     "name" : String,
     "amount" : String,

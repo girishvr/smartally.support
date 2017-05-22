@@ -2,19 +2,8 @@
 const jobSchema = require('../../../models/jobs');
 
 module.exports = (request, response) => {
-  // Get the time greater than thirty mins ago.
-  const now = new Date();
-  var thirtyMinsAgo = new Date ();
-  thirtyMinsAgo.setMinutes(thirtyMinsAgo.getMinutes() - 30);
-  // Set query.
-  jobSchema.find({
-     date: {
-       $gte: thirtyMinsAgo,
-       $lte: now
-     },
-
-     status: false
-   })
+  jobSchema.find({ status: false }) // Set query.
+  .limit(10)
   .then((jobs) => {
     // If no jobs available.
     if (!jobs) {

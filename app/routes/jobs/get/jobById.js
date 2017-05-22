@@ -10,6 +10,11 @@ module.exports = (request, response) => {
         message: 'Job not found,'
       });
     }
+    // If the found job has been completed, delete the job.
+    if (job.status) {
+      deleteJobWith(job._id);
+    }
+
     // Found the job with _id.
     return response.json({
       status: 0,
@@ -25,4 +30,8 @@ module.exports = (request, response) => {
       error: error
     });
   });
+}
+
+function deleteJobWith(id) {
+  jobSchema.remove({ _id: id }).then().catch();
 }

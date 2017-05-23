@@ -4,6 +4,8 @@ module.exports = (job, request, response) => {
   const name = request.body.name;
   const amount = request.body.amount;
   const userid = request.body.userid;
+  const date = new Date(request.body.date);
+  const invoiceNo = request.body.invoice;
 
   console.log(request.body);
   // Validate if all the fields are present.
@@ -14,6 +16,11 @@ module.exports = (job, request, response) => {
     });
   }
   // Update job.
+  /*
+  job.invoiceNo = invoiceNo;
+  job.billDate = date;
+  */
+
   job.name = name;
   job.amount = amount;
   job.completedBy = userid;

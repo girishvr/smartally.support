@@ -30,6 +30,15 @@ const jobSchema = new mongoose.Schema({
   completedBy: {
     type: String,
     default: ''
+  },
+
+  invoiceNo: {
+    type: String,
+    default: ''
+  },
+
+  billDate: {
+    type: Date
   }
 });
 

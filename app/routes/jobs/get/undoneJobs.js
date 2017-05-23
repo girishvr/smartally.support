@@ -4,6 +4,7 @@ const jobSchema = require('../../../models/jobs');
 module.exports = (request, response) => {
   jobSchema.find({ status: false }) // Set query.
   .limit(10)
+  .sort({ date: 'descending' })
   .then((jobs) => {
     // If no jobs available.
     if (!jobs) {

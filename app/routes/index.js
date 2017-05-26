@@ -5,6 +5,7 @@ const router = require('express').Router();
 const jobs = require('./jobs');
 const login = require('./login');
 const registration = require('./registration');
+const uploader = require('./uploader');
 
 // Add routes.
 router
@@ -13,7 +14,8 @@ router
 .delete('/job', jobs.delete)
 .put('/job', jobs.put)
 .get('/job', jobs.get)
-.post('/job', jobs.post);
+.post('/job', jobs.post)
+.post('/upload', uploader);
 
 // Export routes.
 module.exports = router;

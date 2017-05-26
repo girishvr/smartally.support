@@ -1,17 +1,33 @@
-const cloudinary = require('cloudinary');
+var cloudinary = require('cloudinary');
 // Set cloudinary configurations.
-cloudinary.config = {
-  'cloudName': 'smart-support',
-  'apiKey': '351798631832662',
-  'apiSecret': 'DbxCnGLP02gXkAtfpKkE-yo3QqA'
-}
+cloudinary.config({
+  cloud_name: 'smart-support',
+  api_key: '351798631832662',
+  api_secret: 'DbxCnGLP02gXkAtfpKkE-yo3QqA'
+});
 
 module.exports = (request, response) => {
-  console.log(request);
-  console.log('\n**************************');
-  console.log(request.files);
-  console.log('\n**************************');
-  response.json({
-    status: 0
-  });
+  if (request.files.file.path) {
+      cloudinary.uploader
+      .upload(request.files.file.path)
+      .then((url) => {
+        response.json({
+          status: 0,
+          message: 'Upload complete.',
+          imageEp: url.url
+        });
+      })
+      .catch(() => {
+        response.json({
+          status: 1,
+          message: 'Unable to upload.'
+        });
+      });
+  }
+  else {
+    response.json({
+      status: 1,
+      message: 'Failed to save image, incorrect request.'
+    });
+  }
 }

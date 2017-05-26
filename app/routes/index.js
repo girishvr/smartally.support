@@ -1,5 +1,7 @@
 // Get an instance of the Router().
 const router = require('express').Router();
+const multipart = require('connect-multiparty');
+const multipartMiddleware = multipart();
 
 // Get route handlers.
 const jobs = require('./jobs');
@@ -15,7 +17,7 @@ router
 .put('/job', jobs.put)
 .get('/job', jobs.get)
 .post('/job', jobs.post)
-.post('/upload', uploader);
+.post('/upload', multipartMiddleware, uploader);
 
 // Export routes.
 module.exports = router;

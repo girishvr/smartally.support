@@ -17,6 +17,10 @@ username: {
     required: [true, 'Password is required.'],
     minlength: [6, 'Password needs to be at least 6 letters.'],
     maxlength: [16, 'Password needs to be of maximum 16 letters.']
+  },
+  identifier: {
+    type: String,
+    default: ''
   }
 });
 

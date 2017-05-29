@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "smartally-support",
+  "private_key_id": "fdc87c1b0074d36d3c3c295e0c9dc61061e99013",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDKT7mmfk6S4nfg\nH0gCDvCGx9n4pyh0S8JkJUMLOu9C6xZN2GGxvqvsjA2quoxH5vzRPmF2gYsf3IX+\nmDW00QdVM7f5T8d0jwog0iJc4YN1MGzu3XL5nu4Jz6MmFn5CDyqf6raHr/vbn5L6\nSEMsCKjSEPIPuoubaWyPbQZmFWwU+Sf/xXkNfsPiQZZsj72uGFTyH11gjVcvsRur\nY1Ocm+WOv4odPWIdA/v6ET+xSjOJg+YLIhzVDlClPImiS0iFFg7NCRd7k4aigEYy\nMnMk6ZIZiA6ack0TA87SUjzuBVWC9tXM14Hspul2MWr8SeoH01vgpXOZ8wayYWb9\noqO70FzVAgMBAAECggEAEoAR4QjB1KrC/Yq+wfltw1V5OETI7UGUSCYkKF2+TWdE\nBeBYprFh9WKlSUx/0X9s9RF4Rib4evRmiG6Q0rUer4roMvM5sQ33hiLRI583rzq7\na2hywCLpb5o+OBhseUv7wN3szSGprV69SQfcpKUyEuubxxZu98o/NCprIGCrHou0\nmGls4XopFXA+MM7fylYc20uH+kFD8TU233aMujh+7ERQJy4DpD+qbH3g4mFi4hRd\n/YCzIRi5pvx266C12uaFFFcBw2r2iwhy6k2LTA8ESsFAy0kR05pKnr5rRIFtDkbR\nCtY7F9BuhSNDPzOu2vdF76hWC2TQNC604GyRoy0eLQKBgQDrV7Mo9X4SvWKdr7SI\n6/eOr5QBt5Uc9xJ5Q6JS5VaXz8T58g4rEPk9ITXrZ0LLKkyhkoV854sSfuTJeNV2\nhRci2IQLToenUzOW/ZuhVWy91fD6DUn3OXDS9uHqLkP+R/kkulyXt5DKh+ggPaKU\nJrJg5n3ufWoSaYGq0O+zvziwUwKBgQDcEctDSHEDLUWtjfNmmXdPUdzvVxJci4aU\n4MBweNo1EOYgcajWJ5+rUaVnq+GBxLMZgP9bt93wzXHaukjyhhwOImS/3bvH0Nvq\nQA9s42w9fAnAKc4HIytt85JpF86aAk/HeG7JUFEu98dU+hNHEmAemw5JiJIyvILo\n2bl4byA5NwKBgQCAKZBt29M+jVhpG0ir0CVO1Rs7HCjeT0cGNujtT+uqXQGeRE2m\n8mVo/u8INYHQdkapLsv3S3kXJ3ecqGtHUg9ZcKPoLGn/m3Xa4l2grI69iwbihd4j\n/moM2VoKWAu7LKLnd335OYRmZ0DoXeht2e0GjD9EY5QiVsbAqWwAbUCH9QKBgH9y\nhqbGkzxlwY6LQMTQZ7o2DJ9Ha8jQvPYHWytHsgc9bCip6j9r3xpWRFZPwl9mzNoe\nTMSPLSdBs4gajhh19lVxMauz/AXyPQniY4yKAKty5Cq3iyuzAHnCr63RLcMfR5ib\ndH192CY9NOFPmk50o9nVrmaDgzeC2MWFIdZPdPftAoGAUw9OCwD4d5JTxesOpj2j\nJAvuQ80hqoOBXYmI4mk3ic73pAmZ6Pznd5UfTS8maC5myX/m/sKhKwnMUR9D1Tcu\naXwu9YFBIY9OQ9MGmQDwldXyOqoDsU6feukG0a0iGEHRx8PVBN0ZXYHwLAqAh5w1\nSmsMuCkqo9SmGIub60ng3/4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-2uv0w@smartally-support.iam.gserviceaccount.com",
+  "client_id": "105370482664287791494",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-2uv0w%40smartally-support.iam.gserviceaccount.com"
+}

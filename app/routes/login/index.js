@@ -13,7 +13,7 @@ module.exports = (request, response) => {
       });
     }
     // Else compare passwords.
-    const _ = require('./login')(user, request.body.password, response);
+    const _ = require('./login')(user, request.body, response);
   })
   .catch((error) => {
     console.log(error);

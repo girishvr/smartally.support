@@ -6,7 +6,7 @@ cloudinary.config({
   api_secret: 'DbxCnGLP02gXkAtfpKkE-yo3QqA'
 });
 
-module.exports = (request, response) => {
+exports.upload = (request, response) => {
   if (request.files.file.path) {
       cloudinary.uploader
       .upload(request.files.file.path)
@@ -30,4 +30,9 @@ module.exports = (request, response) => {
       message: 'Failed to save image, incorrect request.'
     });
   }
+}
+
+exports.delete = (imageEp) => {
+  cloudinary.uploader
+  .destroy(imageEp)
 }

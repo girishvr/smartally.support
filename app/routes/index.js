@@ -17,7 +17,7 @@ router
 .put('/job', jobs.put)
 .get('/job', jobs.get)
 .post('/job', jobs.post)
-.post('/upload', multipartMiddleware, uploader);
+.post('/upload', multipartMiddleware, uploader.upload);
 
 // Export routes.
 module.exports = router;

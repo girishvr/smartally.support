@@ -8,7 +8,7 @@ module.exports = (request, response) => {
     if (!job) {
       return response.json({
         status: 1,
-        message: 'Job not found,'
+        message: 'Job not found.'
       });
     }
     // If job is found.

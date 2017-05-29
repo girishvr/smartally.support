@@ -7,19 +7,20 @@ admin.initializeApp({
 });
 
 exports.push = (identifiers, jobID) => {
-  const payLoad = {
+  console.log('Inside Notifier \n\n\n\n', identifiers, jobID);
+  const payload = {
     notification: {
       title: 'New Job Available',
       body: 'A new job has been added to your account.'
     },
 
     data: {
-      jobID: jobID
+      jobID: jobID.toString()
     }
   };
 
   admin.messaging()
-  .sendToDevice(identifiers, payLoad)
+  .sendToDevice(identifiers, payload)
   .then((handler) => {
     console.log('Notification sent.', handler);
   })

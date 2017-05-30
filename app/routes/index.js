@@ -8,6 +8,7 @@ const jobs = require('./jobs');
 const login = require('./login');
 const registration = require('./registration');
 const uploader = require('./uploader');
+const identifierupdator = require('./identifier updator');
 
 // Add routes.
 router
@@ -17,6 +18,7 @@ router
 .put('/job', jobs.put)
 .get('/job', jobs.get)
 .post('/job', jobs.post)
+.put('/updateID', identifierupdator)
 .post('/upload', multipartMiddleware, uploader.upload);
 
 // Export routes.

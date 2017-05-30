@@ -39,7 +39,7 @@ function updateDeviceIdentifiers(user, response) {
     return updateUser(user, response)
   })
   .catch ((error) => {
-    return save(user, response);
+    return updateUser(user, response);
   });
 }
 
@@ -57,7 +57,6 @@ function updateUser(user, response) {
     });
   })
   .catch((error) => {
-    console.log(error);
     const errorMessage = error.code == 11000 ? 'Username taken.' : 'Couldn\'t save user.'
     return response.json({
       status: 1,

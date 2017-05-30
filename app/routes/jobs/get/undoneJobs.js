@@ -10,7 +10,7 @@ module.exports = (request, response) => {
     if (!jobs) {
       return response.json({
         status: 1,
-        message: 'No jobs in last half hour.'
+        message: 'No jobs available.'
       });
     }
     // Else return jobs.

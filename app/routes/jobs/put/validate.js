@@ -4,7 +4,7 @@ module.exports = (job, request, response) => {
   const name = request.body.name;
   const amount = request.body.amount;
   const userid = request.body.userid;
-  const date = new Date(request.body.date);
+  const isoDate = new Date(request.body.date);
   const invoiceNo = request.body.invoice;
 
   console.log(request.body);
@@ -16,11 +16,16 @@ module.exports = (job, request, response) => {
     });
   }
   // Update job.
-  /*
-  job.invoiceNo = invoiceNo;
-  job.billDate = date;
-  */
+  if (invoiceNo) { // See if the invoiceNo exists.
+    job.invoiceNo = invoiceNo;
+  }
 
+  if (isoDate) { // See if the date exists.
+    let date = new Date(isoDate);
+    if (date) { // See if the passed date is parsed.
+      job.billDate = date;
+    }
+  }
   job.name = name;
   job.amount = amount;
   job.completedBy = userid;

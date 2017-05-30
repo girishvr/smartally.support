@@ -1,5 +1,3 @@
-// Schema.
-const Schema = require('../../../models/users');
 // Send push notifications.
 const notifier = require('../../push notification');
 
@@ -7,7 +5,8 @@ const notifier = require('../../push notification');
 module.exports = (job, response) => {
   job.save()
   .then(() => {
-    pushNotifications(job._id);
+    // Send out notifications.
+    notifier.push(job._id);
     return response.json({
       status: 0,
       message: 'Job saved.',
@@ -20,15 +19,4 @@ module.exports = (job, response) => {
       message: 'Failed to save the job.'
     });
   });
-}
-
-// Post notification.
-function pushNotifications(jobID) {
-  Schema.find()
-  .then((users) => {
-    const deviceIDs = users
-    .map((user) => user.identifier)
-    .filter((id) => id !== '');
-    notifier.push(deviceIDs, jobID);
-  }).catch ();
 }

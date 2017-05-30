@@ -13,7 +13,7 @@ module.exports = (request, response) => {
   .catch((error) => {
     return response.json({
       status: 1,
-      message: 'Incorrect `id` in query.'
+      message: 'Incorrect \'id\' in query.'
     });
   });
 }

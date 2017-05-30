@@ -1,13 +1,27 @@
 const admin = require('firebase-admin');
 const serviceAccount = require('./privatekey.json');
+const Schema = require('../../models/users');
 // init app.
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: 'https://smartally-support.firebaseio.com'
 });
 
-exports.push = (identifiers, jobID) => {
-  console.log('Inside Notifier \n\n\n\n', identifiers, jobID);
+exports.push = (jobID) => {
+  // Find all device IDs.
+  Schema.find()
+  .then((users) => {
+    const deviceIDs = users
+    .map((user) => user.identifier)
+    .filter((id) => id !== '');
+    sendMessage(deviceIDs, jobID);
+  })
+  .catch ((error) => {
+    console.log('identifiers not found.', error);
+  });
+}
+
+function sendMessage(identifiers, jobID) {
   const payload = {
     notification: {
       title: 'New Job Available',

@@ -2,6 +2,7 @@
 const jobSchema = require('../../../models/jobs');
 
 module.exports = (request, response) => {
+console.log(request.query.id);
   jobSchema.findById(request.query.id)
   .then((job) => {
     // If job not found.

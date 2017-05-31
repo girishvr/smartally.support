@@ -1,5 +1,6 @@
 // Send push notifications.
 const notifier = require('../../push notification');
+const ocr = require('../../../ocr');
 
 // Save the job in DB.
 module.exports = (job, response) => {
@@ -7,6 +8,8 @@ module.exports = (job, response) => {
   .then(() => {
     // Send out notifications.
     notifier.push(job._id);
+    // OCR.
+    ocr.ocr(job.imageEp);
     return response.json({
       status: 0,
       message: 'Job saved.',
